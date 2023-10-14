@@ -1,10 +1,10 @@
-package com.leomarqz.config;
+package com.leomarqz;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Database {
+public class DBConnection {
 
     private static final String URL_CONNECTION = "jdbc:mysql://localhost:3306/twitter_app_clone";
     private static final String USER = "admin";
@@ -15,14 +15,10 @@ public class Database {
         try{
             connection = DriverManager
                     .getConnection(
-                            Database.URL_CONNECTION,
-                            Database.USER,
-                            Database.PASSWORD
+                            DBConnection.URL_CONNECTION,
+                            DBConnection.USER,
+                            DBConnection.PASSWORD
                     );
-
-            if(connection != null) {
-                System.out.println("Connection established!");
-            }
 
         } catch (SQLException e) {
 
